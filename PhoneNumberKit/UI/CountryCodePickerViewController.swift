@@ -250,7 +250,8 @@ extension CountryCodePickerViewController: UISearchResultsUpdating {
 // MARK: Types
 
 public extension CountryCodePickerViewController {
-    struct Country {
+    struct Country: Identifiable, Hashable, Equatable {
+        public var id: String { code }
         public var code: String
         public var flag: String
         public var name: String
